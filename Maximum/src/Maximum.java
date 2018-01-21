@@ -1,6 +1,8 @@
-public class Maximum { //вернуть наибольшее целое число в списке
+import java.util.List;
 
-    public static Integer maximumNum (Integer[] arrlist){ //метод поиска наибольшего числа в массиве
+public class Maximum {
+
+    public  Integer maximumNum (Integer[] arrlist){ //метод поиска наибольшего числа в списке
         Integer maxNumber = arrlist[0];
 
         for(int i = 0; i < arrlist.length ; i++){ // перебираем элементы массива, ищем Мах
@@ -10,10 +12,19 @@ public class Maximum { //вернуть наибольшее целое числ
         return maxNumber; // возвращаем Мах элемент
     }
 
-    public static void main (String args[]){
-        Integer[] list = new Integer[]{3, 8, 7, 4, 12, -25, 74, 31}; //
-
-        System.out.println(maximumNum(list)); // вызываем медот поиска Мах числа  для заданного массива
+    public static Integer getElement(List<Integer> list, Integer n){ //метод, возвращающий n-й элемент списка
+        Integer number;
+        if ( n < list.size()){  // если индекс не превышает размера списка
+            number = list.get(n); // получаем значение элемента по индексу
+        }
+        else {
+            number = -1; // иначе получаем со значением -1
+        }
+        return number; // возвращаем элемент с заданным индексом
     }
-}
+
+
+
+
+
 
